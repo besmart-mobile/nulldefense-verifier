@@ -6,6 +6,16 @@ The API is pretty much the same as in [EqualsVerifier](http://jqno.nl/equalsveri
 
 ## Getting NullDefenseVerifier
 Gradle:
+Step 1. Add the JitPack repository to your build file
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
 ```
 testCompile 'com.github.besmart-mobile:nulldefense-verifier:0.1.0'
 ```
