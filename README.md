@@ -7,16 +7,16 @@ The API is pretty much the same as in [EqualsVerifier](http://jqno.nl/equalsveri
 ## Getting NullDefenseVerifier
 Gradle:
 ```
-testCompile 'com.github.besmart-mobile:nulldefence-verifier:0.1.0'
+testCompile 'com.github.besmart-mobile:nulldefense-verifier:0.1.0'
 ```
 
 ## Usage
-To verify class ```MyClass``` implements correct null defence you should write test like this if using JUnit.
+To verify class ```MyClass``` implements correct null defense you should write test like this if using JUnit.
 ```
 @Test
-public void MyClass_implements_null_defence() {
+public void MyClass_implements_null_defense() {
     NullDefenseVerifier.forClass(MyClass.class).verify();
 }
 ```
 
-By 'correct null defence' throwing ```NullPointerException``` for any null argument is implied.
+By 'correct null defense' throwing ```NullPointerException``` for any null argument is implied.
