@@ -1,6 +1,6 @@
-package com.besmartmobile.nulldefence.verifier.cases;
+package com.besmartmobile.nulldefense.verifier.cases;
 
-import com.besmartmobile.nulldefence.verifier.samples.SimpleClassSample;
+import com.besmartmobile.nulldefense.verifier.samples.SimpleClassSample;
 
 public class InvalidExceptionThrown {
     public InvalidExceptionThrown(SimpleClassSample simpleClassSample) {

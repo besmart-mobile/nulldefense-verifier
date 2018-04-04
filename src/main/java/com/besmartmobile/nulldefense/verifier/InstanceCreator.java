@@ -1,4 +1,4 @@
-package com.besmartmobile.nulldefence.verifier;
+package com.besmartmobile.nulldefense.verifier;
 
 import javassist.util.proxy.ProxyFactory;
 import org.objenesis.Objenesis;

@@ -1,8 +1,7 @@
-package com.besmartmobile.nulldefence.verifier;
+package com.besmartmobile.nulldefense.verifier;
 
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
-import org.objenesis.instantiator.ObjectInstantiator;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -33,7 +32,7 @@ public class NullDefenseVerifier {
     /**
      * Performs the verification of the Null Defense contract
      *
-     * @throws NullDefenceNotImplementedProperlyError If the contract is not met
+     * @throws NullDefenseNotImplementedProperlyError If the contract is not met
      */
     public void verify() {
         verifyConstructors();
@@ -157,6 +156,6 @@ public class NullDefenseVerifier {
     }
 
     private static void failCheck(String checkDetails) {
-        throw new NullDefenceNotImplementedProperlyError(checkDetails);
+        throw new NullDefenseNotImplementedProperlyError(checkDetails);
     }
 }

@@ -1,4 +1,4 @@
-package com.besmartmobile.nulldefence.verifier;
+package com.besmartmobile.nulldefense.verifier;
 
 import java.lang.reflect.InvocationTargetException;
 

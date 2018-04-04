@@ -1,9 +1,9 @@
-package com.besmartmobile.nulldefence.verifier.cases;
+package com.besmartmobile.nulldefense.verifier.cases;
 
-import com.besmartmobile.nulldefence.verifier.samples.AbstractClassSample;
-import com.besmartmobile.nulldefence.verifier.samples.EnumSample;
-import com.besmartmobile.nulldefence.verifier.samples.InterfaceSample;
-import com.besmartmobile.nulldefence.verifier.samples.SimpleClassSample;
+import com.besmartmobile.nulldefense.verifier.samples.AbstractClassSample;
+import com.besmartmobile.nulldefense.verifier.samples.EnumSample;
+import com.besmartmobile.nulldefense.verifier.samples.InterfaceSample;
+import com.besmartmobile.nulldefense.verifier.samples.SimpleClassSample;
 
 public class MissedSimpleClassCheckInConstructor {
     public MissedSimpleClassCheckInConstructor(boolean booleanArg, byte byteArg, short shortArg, char charArg, int intArg, long longArg, float floatArg, double doubleArg,
