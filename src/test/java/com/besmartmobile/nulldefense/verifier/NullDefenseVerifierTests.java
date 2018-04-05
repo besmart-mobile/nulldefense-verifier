@@ -15,6 +15,13 @@ public class NullDefenseVerifierTests {
         NullDefenseVerifier.forClass(ValidNullDefenseWithNullableAttribute.class).verify();
     }
 
+    @Test
+    public void ValidNullDefenseWhenIgnorePrivate_passes_verification() throws Exception {
+        NullDefenseVerifier.forClass(ValidNullDefenseWhenIgnorePrivate.class)
+                .ignorePrivate()
+                .verify();
+    }
+
     @Test(expected = NullDefenseNotImplementedProperlyError.class)
     public void MissedSimpleClassCheckInConstructor_doesnt_pass_verification() throws Exception {
         NullDefenseVerifier.forClass(MissedSimpleClassCheckInConstructor.class).verify();

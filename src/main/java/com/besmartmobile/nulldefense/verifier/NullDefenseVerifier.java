@@ -17,6 +17,7 @@ public class NullDefenseVerifier {
     private static final String NULLABLE_ANNOTATION_NAME = "Nullable";
     private final Class<?> clazz;
     private final InstanceCreator instanceCreator;
+    private ArrayList<Integer> accessModifiersToIgnore = new ArrayList<>();
 
     private NullDefenseVerifier(Class<?> clazz) {
         this.clazz = clazz;
@@ -29,6 +30,16 @@ public class NullDefenseVerifier {
             throw new NullPointerException();
         }
         return new NullDefenseVerifier(clazz);
+    }
+
+    /**
+     * Skips checks for private methods and constructors
+     *
+     * @throws NullDefenseNotImplementedProperlyError If the contract is not met
+     */
+    public NullDefenseVerifier ignorePrivate() {
+        accessModifiersToIgnore.add(Modifier.PRIVATE);
+        return this;
     }
 
     /**
@@ -57,7 +68,10 @@ public class NullDefenseVerifier {
     }
 
     private boolean isMethodVerificationNeeded(Method method) {
-        return !method.isSynthetic() && !Modifier.isAbstract(method.getModifiers());
+        return !method.isSynthetic()
+                && !Modifier.isAbstract(method.getModifiers())
+                && accessModifiersToIgnore.stream()
+                    .noneMatch(modifier -> (method.getModifiers() & modifier) != 0);
     }
 
     private void verifyMethod(Method method) {
