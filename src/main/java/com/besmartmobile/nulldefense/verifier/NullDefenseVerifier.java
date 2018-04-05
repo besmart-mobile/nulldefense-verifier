@@ -10,9 +10,11 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class NullDefenseVerifier {
 
+    private static final String NULLABLE_ANNOTATION_NAME = "Nullable";
     private final Class<?> clazz;
     private final InstanceCreator instanceCreator;
 
@@ -99,8 +101,8 @@ public class NullDefenseVerifier {
 
     private void verifyInvokable(Parameter[] parameters, CheckMessageCreator checkMessageCreator, Invoker invoker) {
         for (int i = 0; i < parameters.length; i++) {
-            Class<?> testParameterType = parameters[i].getType();
-            if (!isNullCheckNeeded(testParameterType)) {
+            Parameter parameter = parameters[i];
+            if (!isNullCheckNeeded(parameter)) {
                 continue;
             }
             Object[] parameterValues = generateParameterValues(parameters, i);
@@ -136,8 +138,17 @@ public class NullDefenseVerifier {
         return parameterValues.toArray();
     }
 
-    private boolean isNullCheckNeeded(Class<?> parameterType) {
-        return !parameterType.isPrimitive();
+    private boolean isNullCheckNeeded(Parameter parameter) {
+        Class<?> parameterType = parameter.getType();
+        if (parameterType.isPrimitive()) {
+            return false;
+        }
+        boolean hasNullableAnnotation = Stream.of(parameter.getAnnotations())
+                .anyMatch(annotation -> NULLABLE_ANNOTATION_NAME.equals(annotation.annotationType().getSimpleName()));
+        if (hasNullableAnnotation) {
+            return false;
+        }
+        return true;
     }
 
     private String getMethodVerificationDetails(Method method, Parameter[] parameters, int nullParameterIndex) {

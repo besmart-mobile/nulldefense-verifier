@@ -10,6 +10,11 @@ public class NullDefenseVerifierTests {
         NullDefenseVerifier.forClass(ValidNullDefense.class).verify();
     }
 
+    @Test
+    public void ValidNullDefenseWithNullableAttribute_passes_verification() throws Exception {
+        NullDefenseVerifier.forClass(ValidNullDefenseWithNullableAttribute.class).verify();
+    }
+
     @Test(expected = NullDefenseNotImplementedProperlyError.class)
     public void MissedSimpleClassCheckInConstructor_doesnt_pass_verification() throws Exception {
         NullDefenseVerifier.forClass(MissedSimpleClassCheckInConstructor.class).verify();
