@@ -44,7 +44,7 @@ NullDefenseVerifier.forClass(MyClass.class)
     
 
 It's possible to put ```@Nullable``` annotation on the parameter to skip null defense check for this parameter.
-You can use any ```@Nullable``` annotation you want as it checked by simple name, not the whole type. Just remember that it MUST has ```RUNTIME``` ```RetentionPolicy```.
+You can use any ```@Nullable``` annotation you want as it checked by simple name, not the whole type. Just remember that it MUST have ```RUNTIME``` ```RetentionPolicy```.
 So for example you can use
 - ```javax.annotation```
 - ```javax.validation.constraints```
