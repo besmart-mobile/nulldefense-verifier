@@ -17,7 +17,7 @@ allprojects {
 ```
 Step 2. Add the dependency
 ```
-testCompile 'com.github.besmart-mobile:nulldefense-verifier:0.1.0'
+testCompile 'com.github.besmart-mobile:nulldefense-verifier:0.4.0'
 ```
 
 ## Basic Usage
