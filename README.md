@@ -4,6 +4,8 @@ With this library you can automate unit testing of arguments null checks.
 It provides convinient one line way to verify correct null checks for arguments in all constructors, static and instance methods of the class under test.
 The API is pretty much the same as in [EqualsVerifier](http://jqno.nl/equalsverifier/).
 
+In our blog article we explain the convenience of this tool. You can read it [here](http://besmart-mobile.com/blog/easy-defensive-programming-in-java-our-solution/).
+
 ## Getting NullDefenseVerifier
 Gradle:
 Step 1. Add the JitPack repository to your build file
