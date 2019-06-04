@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/besmart-mobile/nulldefense-verifier.svg?branch=master)](https://travis-ci.org/besmart-mobile/nulldefense-verifier)
+[![Build Status](https://travis-ci.org/besmart-mobile/nulldefense-verifier.svg?branch=master)](https://travis-ci.org/besmart-mobile/nulldefense-verifier) [![codecov](https://codecov.io/gh/besmart-mobile/nulldefense-verifier/branch/master/graph/badge.svg)](https://codecov.io/gh/besmart-mobile/nulldefense-verifier)
 # NullDefenseVerifier
 With this library you can automate unit testing of arguments null checks.
 It provides convinient one line way to verify correct null checks for arguments in all constructors, static and instance methods of the class under test.
